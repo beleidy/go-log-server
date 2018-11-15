@@ -19,14 +19,14 @@ func dbLogger(e chan Entry) {
 	pool, err := pgx.NewConnPool(poolConfig)
 	check(err)
 
-	pool.Prepare("log", "INSERT INTO logs (time, level, message) VALUES ($1, $2, $3)")
+	pool.Prepare("log", "INSERT INTO logs (crawler, time, message) VALUES ($1, $2, $3)")
 
 	for {
 		entry := <-e
 		go func() {
 			_, err := pool.Exec(
 				"log",
-				entry.Time, entry.Level, entry.Message)
+				entry.ID, entry.Time, entry.Message)
 			check(err)
 		}()
 	}

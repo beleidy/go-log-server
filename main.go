@@ -10,7 +10,7 @@ import (
 var config Configuration
 
 func main() {
-	err := envconfig.Process("", &config)
+	err := envconfig.Process("log", &config)
 	check(err)
 
 	go initMessage()
