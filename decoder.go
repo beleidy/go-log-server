@@ -6,18 +6,15 @@ import (
 )
 
 func postDecoder(postQueue chan []byte,
-	loggingChannels []chan Entry) {
+	dbQueue chan Entry) {
 
 	for {
 		postBody := <-postQueue
-
 		decoder := json.NewDecoder(bytes.NewReader(postBody))
 		var entry Entry
 		err := decoder.Decode(&entry)
 		check(err)
+		dbQueue <- entry
 
-		for _, ch := range loggingChannels {
-			ch <- entry
-		}
 	}
 }
