@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/jackc/pgx"
 )
 
@@ -25,7 +23,6 @@ func dbLogger(e chan Entry) {
 
 	for {
 		entry := <-e
-		fmt.Println(entry)
 		go func() {
 			_, err := pool.Exec(
 				"log",
