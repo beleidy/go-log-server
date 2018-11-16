@@ -8,5 +8,6 @@ import (
 type Entry struct {
 	ID      string    `json:"id"`
 	Time    time.Time `json:"time"`
+	URL     string    `json:"url"`
 	Message string    `json:"message"`
 }
