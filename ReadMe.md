@@ -41,6 +41,20 @@ Your server is now running at port `8080`
 The server expects to recieve a `POST` request with a JSON in the body in the format
 ```
 {
-    
+    "id": <string>,
+    "time": <time>,
+    "level": <int>,
+    "message": <string>
 }
+```
+
+so we can use [cURL](https://curl.haxx.se/docs/manual.html) to send a POST request from the command line. Open your terminal and enter
+```
+curl -d '{"id":"test-log", "time":"2019-04-16T08:03:46.657Z", \
+    "level":3, "message":"if you can see this, logging worked"}' \ 
+    -H "Content-Type: application/json" -X POST http://localhost:8080
+```
+You should now be able to see the log item wherever you have logging enabled.
+
+
 
