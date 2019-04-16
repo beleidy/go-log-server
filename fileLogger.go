@@ -6,7 +6,7 @@ import (
 )
 
 func fileLogger(fileQueue chan Entry) {
-	fd, err := os.OpenFile(config.LogFilePath, os.O_APPEND|os.O_WRONLY, 0644)
+	fd, err := os.OpenFile(config.LogFilePath, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0644)
 	check(err)
 	defer fd.Close()
 
