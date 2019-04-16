@@ -56,5 +56,8 @@ curl -d '{"id":"test-log", "time":"2019-04-16T08:03:46.657Z", \
 ```
 You should now be able to see the log item wherever you have logging enabled.
 
+## Built with
+* [Golang](https://golang.org/)
+* [fasthttp](https://github.com/valyala/fasthttp)
 
 
