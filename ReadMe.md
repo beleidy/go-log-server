@@ -21,18 +21,19 @@ Edit the `.env` file. The variable names and their description below:
 | **Env variable** | **type** | **description** | **default value**
 |:-------------:|:-----:| ---------- |:-----:|
 | logToScreen | bool | enable logging to stout | true |
-| logToFile | bool | enable logging to file on the server | true |
-| logToDb |  bool | enable logging to database | true |
+| logToFile | bool | enable logging to file on the server | false |
+| logToDb |  bool | enable logging to database | false |
 | dbHost |  string | address of database server | localhost |
 | dbPort |  uint16 | port number of the database server | 5432 |
 | dbName |  string | name of the database | logs |
 | dbUser |  string | username for database | postgres |
 | dbPassword |  string | passwod for database | postgres |
 | dbMaxConnections |  int | maximum number of connections between the server and your database | 95 |
-| logFilePath |  string | path to write log file if enabled | "" |
+| logFilePath |  string | path to write log file if enabled | "main.log" |
 
-### Run the server
+### Source the enviornment variables and run the server
 ```
+source .env
 go run .
 ```
 Your server is now running at port `8080`
