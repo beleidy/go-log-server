@@ -21,7 +21,7 @@ Edit the `.env` file. The variable names and their description below:
 | **Env variable** | **type** | **description** | **default value**
 |:-------------:|:-----:| ---------- |:-----:|
 | logToScreen | bool | enable logging to stout | true |
-| logToFile | bool | enable logging to file on the server | false |
+| logToFile | bool | enable logging to file on the server | true |
 | logToDb |  bool | enable logging to database | false |
 | dbHost |  string | address of database server | localhost |
 | dbPort |  uint16 | port number of the database server | 5432 |
